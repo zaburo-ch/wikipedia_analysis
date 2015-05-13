@@ -24,7 +24,7 @@ def get_pagerank(M, alpha=0.85, return_P=False):
         return np.argsort(P)[-1::-1]
 
 
-def get_pagerank_simple(M, alpha=0.85, err_dist=0.001, return_P=False):
+def get_pagerank_simple(M, alpha=0.85, err_dist=0.0001, return_P=False):
     """
     calculate pagerank using simply method
     Args:

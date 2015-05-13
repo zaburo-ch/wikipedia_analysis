@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-u"""
-
-
-"""
-
-
 import numpy as np
 import os
 import urllib
@@ -140,11 +134,11 @@ def make_transition_probability_matrix(page_name_list, edges, page_n):
     return M
 
 
-def get_wikipedia_pagerank(M, alpha, err_dist, return_P):
+def get_wikipedia_pagerank(M, alpha, err_dest, return_P):
     print "-- calculate pagerank --------------------------"
     print "calculating ...",
     sys.stdout.flush()
-    rank, P = get_pagerank_simple(M, alpha, err_dist, return_P)
+    rank, P = get_pagerank_simple(M, alpha, err_dest, return_P)
     print "done"
     return rank, P
 
@@ -166,14 +160,12 @@ def get_from_file_or_func(name, func, *arg):
     return obj
 
 
-def wikipedia_pagerank(ymd, page_n, save=False):
+def wikipedia_pagerank(ymd, page_n, save=False, alpha=0.85, err_dest=0.0001):
     page_name_list = get_from_file_or_func("page_name_list(n={0}).dump".format(page_n), get_wikipedia_pageview_top, ymd, page_n)
-    """
+
     edges = get_from_file_or_func("edge(n={0}).dump".format(page_n), get_wikipedia_page_edge, page_name_list)
     M = get_from_file_or_func("M(n={0}).dump".format(page_n), make_transition_probability_matrix, page_name_list, edges, page_n)
-    rank, P = get_from_file_or_func("rank(n={0}).dump".format(page_n), get_wikipedia_pagerank, M, 0.85, 0.0001, True)
-    """
-    rank, P = get_from_file_or_func("rank(n={0}).dump".format(page_n), get_wikipedia_pagerank, 0)
+    rank, P = get_from_file_or_func("rank(n={0}).dump".format(page_n), get_wikipedia_pagerank, M, alpha, err_dest, True)
 
     print "-- result --------------------------------------"
     if save:
@@ -192,4 +184,4 @@ def wikipedia_pagerank(ymd, page_n, save=False):
 
 
 if __name__ == "__main__":
-    wikipedia_pagerank(DATE, PAGE_NUM, save=False)
+    wikipedia_pagerank(DATE, PAGE_NUM, save=True)
