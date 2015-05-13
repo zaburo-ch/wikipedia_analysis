@@ -15,8 +15,8 @@ python pagerank_wiki.py
 * 各ページの記事内のリンクをエッジとした有向グラフつくる  
 * 有向グラフ内でPageRankを計算し大きい順に出力する  
 
-取り出すページ数やPageRankでのダンピングファクターなどは簡単に変更できます。
-pagerank.pyには遷移確率行列からPageRankを計算する処理が書かれています。
+取り出すページ数やPageRankでのダンピングファクターなどは簡単に変更できます。  
+pagerank.pyには遷移確率行列からPageRankを計算する処理が書かれています。  
 
 wikipedia.py
 ----
