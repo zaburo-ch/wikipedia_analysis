@@ -62,8 +62,18 @@ if __name__ == "__main__":
                   [1./5,   0,    0, 1./3,    0, 1./2,   1],
                   [   0,   0,    0,    0, 1./4,    0,   0],
                   [1./5,   0,    0,    0,    0,    0,   0]])
-    print get_pagerank(M, alpha=0)
-    print get_pagerank_simple(M, alpha=0)
+
+    print "Rank | ID | p"
+
+    print "--get_pagerank--------------------"
+    r, p = get_pagerank(M, alpha=0, return_P=True)
+    for i in range(len(r)):
+        print "{0:4d} | {1:2d} | {2}".format(i+1, r[i]+1, p[r[i]])
+
+    print "--get_pagerank_simple-------------"
+    r, p = get_pagerank_simple(M, alpha=0, return_P=True)
+    for i in range(len(r)):
+        print "{0:4d} | {1:2d} | {2}".format(i+1, r[i]+1, p[r[i]])
 
     """
     import time
