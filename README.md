@@ -18,6 +18,8 @@ python pagerank_wiki.py
 取り出すページ数やPageRankでのダンピングファクターなどは簡単に変更できます。  
 pagerank.pyには遷移確率行列からPageRankを計算する処理が書かれています。  
 
+PageRankについての詳しい説明は[こちら](https://zaburo-ch.github.io/post/20150514_0/)
+
 wikipedia.py
 ----
 Wikipediaに存在する記事のうち最も距離のはなれている記事の組み合わせを探すプログラムです。  
