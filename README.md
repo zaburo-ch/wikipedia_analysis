@@ -21,7 +21,7 @@ pagerank.pyには遷移確率行列からPageRankを計算する処理が書か�
 wikipedia.py
 ----
 Wikipediaに存在する記事のうち最も距離のはなれている記事の組み合わせを探すプログラムです。  
-詳しくは[こちら](http://zaburoapp.blog.fc2.com/blog-entry-26.html)
+詳しくは[こちら](https://zaburo-ch.github.io/post/20141017_0/)
 
 やっていることは次の通りです。
 * [http://dumps.wikimedia.org](http://dumps.wikimedia.org)から1時間ごとの閲覧数のデータを1日分取ってくる  
